@@ -1,17 +1,19 @@
 namespace Uppgift_arv
 {
-    public class Rectangle : Shape
+    public class Rectangle : IShape
     {
-        public Rectangle(int höjd, int bredd) : base(höjd, bredd)
+        int width;
+        int height;
+        public Rectangle(int höjd, int bredd)
         {
         }
 
-        public override int Area()
+        public int Area()
         {
             int area = width*height;
             return area;
         }
-        public override int Circumferance()
+        public int Circumferance()
         {
             int circumferance = (width*2)+(height*2);
             return circumferance;
