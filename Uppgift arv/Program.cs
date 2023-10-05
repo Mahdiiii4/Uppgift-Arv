@@ -1,25 +1,47 @@
 ﻿using System;
+using System.Diagnostics;
 using Uppgift_arv;
+using Uppgift_Arv;
 
 
-Console.WriteLine("Skriv 1 för rätvinklig triangel och 2 för rektangel");
+Console.WriteLine("Skriv ner nummer på vilken du vill ta reda på area och omkrets");
+Console.WriteLine("1. Rektangl");
+Console.WriteLine("2. Triangl");
+Console.WriteLine("3. Circle");
+Console.WriteLine("4. Shpere");
+Console.WriteLine("5. Cylinder");
 int val = int.Parse(Console.ReadLine());
-Shape shape = null;
+IShape shape = null;
 
-if (val == 2)
+switch(val)
 {
-    Console.WriteLine("Skriv höjd och bredd på var enda linje");
-    shape = new Rectangle(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine())); //
+    case 1:
+    {
+        Console.WriteLine("Skriv höjd och bredd på var enda linje");
+        shape = new Rectangle(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+        break;
+    }
+    case 2:
+    {
+        Console.WriteLine("Skriv höjd och bredd på var enda linje");
+        shape = new Triangle(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
+        break;
+    }
+    case 3:
+    {
+        Console.WriteLine("Skriv radien");
+        shape = new Circle(int.Parse(Console.ReadLine()));
+        break;
+    }
+    case 4:
+    {
+        
+    }
+    default:
+    {
+        Console.WriteLine("Välj mellan 1 eller 2");
+        break;
+    }
 }
-else if(val== 1)
-{
-    Console.WriteLine("Skriv höjd och bredd på var enda linje");
-    shape = new Triangle(int.Parse(Console.ReadLine()), int.Parse(Console.ReadLine()));
-}
-else
-{
-    Console.WriteLine("Välj mellan 1 eller 2");
-}
-
-    Console.WriteLine("Area är: " +shape.Area()+ ".");
-    Console.WriteLine("Omkrets är: " +shape.Circumferance()+ ".");
+Console.WriteLine("Area är: " +shape.Area()+ ".");
+Console.WriteLine("Omkrets är: " +shape.Circumferance()+ ".");

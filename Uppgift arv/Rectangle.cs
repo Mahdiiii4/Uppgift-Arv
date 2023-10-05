@@ -1,3 +1,5 @@
+using Uppgift_Arv;
+
 namespace Uppgift_arv
 {
     public class Rectangle : IShape
@@ -6,6 +8,8 @@ namespace Uppgift_arv
         int height;
         public Rectangle(int höjd, int bredd)
         {
+            height = höjd;
+            width = bredd;
         }
 
         public int Area()

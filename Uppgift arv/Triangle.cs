@@ -1,3 +1,5 @@
+using Uppgift_Arv;
+
 namespace Uppgift_arv
 {
     public class Triangle : IShape
@@ -6,6 +8,8 @@ namespace Uppgift_arv
         int height;
         public Triangle(int höjd, int bredd)
         {
+            height = höjd;
+            width = bredd;
         }
 
         public int Area()
